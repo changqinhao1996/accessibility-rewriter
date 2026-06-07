@@ -1,0 +1,3 @@
+"""
+Acceptance test steps package.
+"""

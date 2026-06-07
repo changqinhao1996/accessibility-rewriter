@@ -1,0 +1,67 @@
+/* ─────────────────────────────────────────────────────────────
+   Global Application Styles
+   ───────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0d1117;
+  color: #e1e4e8;
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #161b22 0%, #0d1117 70%);
+}
+
+/* ── Navigation Tabs ──────────────────────────────────────── */
+.app-nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #30363d;
+  padding: 0 1.5rem;
+  background: rgba(13, 17, 23, 0.8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-tab {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: none;
+  color: #8b949e;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-tab:hover {
+  color: #c9d1d9;
+}
+
+.nav-tab.active {
+  color: #58a6ff;
+  border-bottom-color: #58a6ff;
+}
+

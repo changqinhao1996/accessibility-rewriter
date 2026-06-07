@@ -1,0 +1,364 @@
+/* ─────────────────────────────────────────────────────────────
+   DatabaseViewer Styles
+   ───────────────────────────────────────────────────────────── */
+
+.db-viewer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #e1e4e8;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.db-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.db-header-left h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #e1e4e8;
+}
+
+.db-icon {
+  font-size: 1.3rem;
+}
+
+.db-subtitle {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b949e;
+  margin-top: 0.2rem;
+}
+
+.db-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.db-refresh-time {
+  font-size: 0.75rem;
+  color: #8b949e;
+}
+
+.btn-refresh {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #21262d;
+  color: #c9d1d9;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-refresh:hover:not(:disabled) {
+  background: #30363d;
+  border-color: #58a6ff;
+}
+
+.btn-refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Error ─────────────────────────────────────────────────── */
+.db-error {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: rgba(248, 81, 73, 0.12);
+  border: 1px solid rgba(248, 81, 73, 0.35);
+  color: #f85149;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ── Stats Bar ─────────────────────────────────────────────── */
+.db-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  flex: 1;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* ── Section ───────────────────────────────────────────────── */
+.db-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8b949e;
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-icon {
+  font-size: 1rem;
+}
+
+.row-count {
+  font-size: 0.7rem;
+  color: #6e7681;
+  font-weight: 400;
+  margin-left: auto;
+}
+
+/* ── Document Card ─────────────────────────────────────────── */
+.doc-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.doc-card:hover {
+  border-color: #58a6ff44;
+}
+
+.doc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.doc-row:hover {
+  background: rgba(88, 166, 255, 0.04);
+}
+
+.expand-arrow {
+  font-size: 0.65rem;
+  color: #8b949e;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.expand-arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.doc-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.field-label {
+  font-size: 0.65rem;
+  color: #6e7681;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.field-value {
+  font-size: 0.85rem;
+  color: #c9d1d9;
+}
+
+.field-value.mono {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.75rem;
+  color: #8b949e;
+}
+
+.field-value.dimmed {
+  color: #8b949e;
+  font-size: 0.8rem;
+}
+
+.version-badge {
+  background: rgba(188, 140, 255, 0.15);
+  border: 1px solid rgba(188, 140, 255, 0.3);
+  color: #bc8cff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Versions Panel ────────────────────────────────────────── */
+.versions-panel {
+  border-top: 1px solid #30363d;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.versions-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8b949e;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.versions-table-wrapper {
+  overflow-x: auto;
+}
+
+.versions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.versions-table th {
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  color: #6e7681;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #30363d;
+  white-space: nowrap;
+}
+
+.versions-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+  color: #c9d1d9;
+  vertical-align: top;
+}
+
+.versions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.versions-table tr:hover td {
+  background: rgba(88, 166, 255, 0.04);
+}
+
+.center {
+  text-align: center;
+}
+
+.version-num {
+  background: rgba(63, 185, 80, 0.15);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+  color: #3fb950;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.level-pill {
+  background: rgba(56, 139, 253, 0.12);
+  border: 1px solid rgba(56, 139, 253, 0.25);
+  color: #58a6ff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.content-cell {
+  max-width: 300px;
+  color: #8b949e;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+/* ── Empty State ───────────────────────────────────────────── */
+.db-empty {
+  text-align: center;
+  padding: 1.5rem;
+  color: #6e7681;
+  font-size: 0.85rem;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+.db-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #30363d;
+}
+
+.back-link {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: #79c0ff;
+  text-decoration: underline;
+}
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .db-stats {
+    flex-direction: column;
+  }
+  .db-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .doc-fields {
+    flex-direction: column;
+  }
+}
