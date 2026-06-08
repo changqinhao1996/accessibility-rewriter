@@ -42,3 +42,10 @@ alembic/versions/*.pyc
 
 # Docker
 *.log
+
+# Uploaded files (generated during tests/runtime)
+uploads/
+server/uploads/*.png
+server/uploads/*.jpg
+server/uploads/*.gif
+server/uploads/*.webp

@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import RewritePage from './pages/RewritePage'
+import AnalyzePage from './pages/AnalyzePage'
+import AltTextPage from './pages/AltTextPage'
 import DatabaseViewer from './pages/DatabaseViewer'
 import './App.css'
 
 function App() {
-  const [page, setPage] = useState<'rewrite' | 'database'>('rewrite')
+  const [page, setPage] = useState<'rewrite' | 'analyze' | 'alttext' | 'database'>('rewrite')
 
   return (
     <div className="app-container">
@@ -17,6 +19,19 @@ function App() {
           ✏️ Rewrite
         </button>
         <button
+          className={`nav-tab ${page === 'analyze' ? 'active' : ''}`}
+          onClick={() => setPage('analyze')}
+        >
+          📊 Analyze
+        </button>
+        <button
+          id="alttext-tab"
+          className={`nav-tab ${page === 'alttext' ? 'active' : ''}`}
+          onClick={() => setPage('alttext')}
+        >
+          🖼️ Alt Text
+        </button>
+        <button
           className={`nav-tab ${page === 'database' ? 'active' : ''}`}
           onClick={() => setPage('database')}
         >
@@ -26,6 +41,8 @@ function App() {
 
       {/* ── Page Content ────────────────────────────────────── */}
       {page === 'rewrite' && <RewritePage />}
+      {page === 'analyze' && <AnalyzePage />}
+      {page === 'alttext' && <AltTextPage />}
       {page === 'database' && <DatabaseViewer />}
     </div>
   )
